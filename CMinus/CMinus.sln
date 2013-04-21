@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMinus", "CMinus\CMinus.csproj", "{733D1066-9A67-4068-97FC-29954584D644}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMinusClassLibrary", "CMinusClassLibrary\CMinusClassLibrary.csproj", "{23BCFCEC-19BE-43D0-91BD-A58459C0B4CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphLayout", "GraphLayout\GraphLayout.csproj", "{FB8364B6-55D2-45B0-B173-E6308C19DD61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeContainer", "TreeContainer\TreeContainer.csproj", "{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs07.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CMinus\\CMinus.csproj
+		SccProjectName1 = CMinus
+		SccLocalPath1 = CMinus
+		SccProjectUniqueName2 = CMinusClassLibrary\\CMinusClassLibrary.csproj
+		SccProjectName2 = CMinusClassLibrary
+		SccLocalPath2 = CMinusClassLibrary
+		SccProjectUniqueName3 = GraphLayout\\GraphLayout.csproj
+		SccProjectName3 = GraphLayout
+		SccLocalPath3 = GraphLayout
+		SccProjectUniqueName4 = TreeContainer\\TreeContainer.csproj
+		SccProjectName4 = TreeContainer
+		SccLocalPath4 = TreeContainer
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{733D1066-9A67-4068-97FC-29954584D644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{733D1066-9A67-4068-97FC-29954584D644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{733D1066-9A67-4068-97FC-29954584D644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{733D1066-9A67-4068-97FC-29954584D644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23BCFCEC-19BE-43D0-91BD-A58459C0B4CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23BCFCEC-19BE-43D0-91BD-A58459C0B4CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23BCFCEC-19BE-43D0-91BD-A58459C0B4CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23BCFCEC-19BE-43D0-91BD-A58459C0B4CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8364B6-55D2-45B0-B173-E6308C19DD61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B86170-EC9F-4ACF-B96E-0F97C28F57BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

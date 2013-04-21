@@ -1,0 +1,291 @@
+1 program - > declaration-list 
+first: {INT  VOID}
+predict: {INT  VOID}
+
+2 declaration-list - > declaration declaration-list' 
+first: {INT  VOID}
+predict: {INT  VOID}
+
+3 declaration-list'- > empty
+first: {empty}///////////////////////////////////////////////
+predict: {#}
+
+4 declaration-list'- > declaration declaration-list'
+first: {INT  VOID}
+predict: {INT  VOID}
+
+5 declaration -> var-declaration 
+first: {INT  VOID}
+predict: {INT  VOID}
+
+6 declaration -> fun-declaration
+first: {INT  VOID}
+predict: {INT  VOID}
+
+7 var-declaration -> type-specifier ID' array
+first: {INT  VOID}
+predict: {INT  VOID}
+
+8 array -> empty ;
+first: {empty}//////////////////////////////////////////
+predict: {int void id num ( ; } # comma )}
+
+9 array -> [NUM'] ; 
+first: {[}
+predict: {[}
+
+10 type-specifier -> int 
+first: {INT}
+predict: {INT}
+
+11 type-specifier ->  void
+first: {VOID}
+predict: {VOID}
+
+12 fun-declaration -> type-specifier ID'(params) compound-stmt
+first: {INT  VOID}
+predict: {INT  VOID}
+
+13 params ->  param-list 
+first: {INT  VOID}
+predict: {INT  VOID}
+
+14 params -> empty
+first: {empty}//////////////////////////////////
+predict: {)}
+
+15  param-list -> param param-list'
+fisrt: {INT  VOID}
+predict: {INT  VOID}
+
+16 param-list' -> empty 
+first: {empty}///////////////////////////////////////////
+predict: {)} 
+
+17 param-list' ->  , param param-list'
+first: {COMMA}
+predict: {COMMA}
+
+18 param -> type-specifier ID' array
+first: {INT  VOID}
+predict: {INT  VOID}
+
+19 compound-stmt -> {local-declarations statement-list}
+first: { { }
+predict: {{}
+
+20 local-declarations -> empty 
+first: {empty}////////////////////////////////////
+predict: { id  num  (  ;  }  if while return }
+
+21 local-declarations ->  var-declaration local-declarations
+first: {INT  VOID}
+predict: {INT  VOID}
+
+22 statement-list ->  empty 
+first: {empty}///////////////////////////////
+predict: { } }
+
+23 statement-list ->  statement statement-list
+first:{ID NUM ( ; { if while return}
+predict: {ID NUM ( ; { if while return}
+
+24 statement -> expression-stmt 
+first:{ID NUM ( ;}
+predict: {ID NUM ( ;}
+
+25 statement -> compound-stmt 
+first: { { }
+predict: {{}
+
+26 statement -> selection-stmt
+first: {if}
+predict: {if}
+
+27 statement -> iteration-stmt 
+first: {while}
+predict: {while}
+
+28 statement -> return-stmt
+first: {return}
+predict: {return}
+
+29 expression-stmt-> expression ; 
+first:{ID NUM (}
+predict: {ID NUM (}
+
+30 expression-stmt-> ;
+first:{;}
+predict: {;}
+
+31 selection-stmt -> if (expression) statement   else-statement
+first: {if}
+predict: {if}
+
+32 else-statement -> empty 
+first: {empty}/////////////////////////////////////////
+predict: {id num ( ; } { if while return }
+
+33 else-statement -> else statement
+first: {else}
+predict: {else}
+
+34 iteration-stmt -> while (expression) statement 
+first: { while }
+predict: {while}
+
+35 return-stmt ¡ú return res
+first: { return }
+predict: {return}
+
+36 res -> ; 
+first: { ;}
+predict: {;}
+
+37 res -> expression;
+first: { ID NUM ( }
+predict: {ID NUM (}
+
+38//Ô¤²âÁ½¸ö?????????????????????????
+expression -> var = expression 
+first:{ID}
+
+39 expression -> simple-expression
+first:{ID NUM (}
+
+40 var -> ID array'
+first:{ID}
+predict: {ID}
+
+41array' -> empty
+first: {empty}/////////////////////////////////
+predict: {=  ;  } ) comma <= < > >= == != + - * /}
+
+42 array' -> [expression]
+first: {[}
+predict: {[}
+
+43 simple-expression -> additive-expression relop-expression
+first:{ID NUM (}
+predict: {ID NUM (}
+
+44 relop-expression -> empty 
+first:{empty}/////////////////////////////////////
+predict: { ;  } ) comma}
+45 relop-expression -> relop additive-expression
+first:{<=   <   >   >=   ==   !=}
+predict: {<=   <   >   >=   ==   !=}
+
+46 relop ¡ú <= 
+first:{<= }
+predict: {<= }
+
+47 additive-expression -> term additive-expression'
+first:{ID NUM (}
+predict: {ID NUM (}
+
+48 additive-expression' -> empty 
+first:{empty}//////////////////////////////////////////
+predict: {;  } ) comma <= < > >= == !=}
+
+49 additive-expression' ->  addop term additive-expression'
+first:{+ -}
+predict: {+ -}
+
+50 addop ¡ú + 
+first:{+ }
+predict: {+ }
+
+51 term ¡ú factor term'
+first:{ID NUM (}
+predict: {ID NUM (}
+
+52 term' -> empty 
+first:{empty}/////////////////////////////////////////
+predict: {;  } ) comma <= < > >= == != + -}
+
+53 term' -> empty mulop factor term'
+first:{ *   / }
+predict: {*   /}
+
+54 mulop ¡ú * 
+first:{ *    }
+predict: {*   }
+
+55 factor ¡ú ID A' 
+first:{ ID }
+predict: { ID }
+
+56 factor ¡ú ( expression ) 
+first:{ ( }
+predict: { ( }
+
+57 factor ¡ú  NUM
+first:{NUM}
+predict: {NUM}
+
+58 A' -> array' 
+first:{empty [}///////////////////////////////////////////
+predict: {[ ;  } ) comma <= < > >= == != + - * /}
+
+59 A' -> array' ( args )
+first:{(}
+predict: {(}
+
+60 call  ¡ú ID( args )
+first:{ID}
+predict: {ID}
+
+61 args ¡ú arg-list 
+first:{ID NUM (}
+predict: {ID NUM (}
+
+62 args ¡ú empty
+first:{empty}/////////////////////////////////////
+predict: {)}
+
+63 arg-list -> expression arg-list'
+first:{ID NUM (}
+predict: {ID NUM (}
+
+64 arg-list' -> empty 
+first:{empty }/////////////////////////////////
+predict: {)}
+
+65 arg-list' -> ,expression arg-list'
+first:{COMMA}
+predict: {COMMA}
+
+66 addop ¡ú  -
+first:{ - }
+predict: { - } 
+
+67 mulop ¡ú /
+first:{  / }
+predict: {  /}
+
+68 relop ¡ú  < 
+first:{ < }
+predict: {<}
+
+69 relop ¡ú  >
+first:{  >  }
+predict: {  > }
+
+70 relop ¡ú  >=
+first:{  >=  }
+predict: { >= }
+
+71 relop ¡ú  ==
+first:{ == }
+predict: { == }
+
+72 relop ¡ú  !=
+first:{ !=}
+predict: { !=}
+
+73 ID' -> ID
+predict:{ ID }
+
+74 NUM' -> NUM
+predict:{ NUM }
